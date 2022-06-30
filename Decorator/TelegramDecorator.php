@@ -2,15 +2,18 @@
 
 namespace EnotNotifer\Decorator;
 
-use EnotNotifer\Interface\SenderInterface;
+use EnotNotifer\Interface\ConfirmInterface;
+use EnotNotifer\Provider\BaseDecorator;
 
-class TelegramDecorator implements SenderInterface {
+class TelegramDecorator extends BaseDecorator implements ConfirmInterface {
 
     const SEND_TYPE = 'telegram';
 
-    public function send($message)
+    public static function send($message)
     {
         // TODO: Implement send() method.
+
+        parent::save($message);
     }
 
 }

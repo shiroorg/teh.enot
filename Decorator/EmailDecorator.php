@@ -2,15 +2,18 @@
 
 namespace EnotNotifer\Decorator;
 
-use EnotNotifer\Interface\SenderInterface;
+use EnotNotifer\Interface\ConfirmInterface;
+use EnotNotifer\Provider\BaseDecorator;
 
-class EmailDecorator implements SenderInterface {
+class EmailDecorator extends BaseDecorator implements ConfirmInterface {
 
     const SEND_TYPE = 'email';
 
-    public function send($message)
+    public static function send($message)
     {
         // TODO: Implement send() method.
+
+        parent::save($message);
     }
 
 }

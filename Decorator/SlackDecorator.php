@@ -2,15 +2,18 @@
 
 namespace EnotNotifer\Decorator;
 
-use EnotNotifer\Interface\SenderInterface;
+use EnotNotifer\Interface\ConfirmInterface;
+use EnotNotifer\Provider\BaseDecorator;
 
-class SlackDecorator implements SenderInterface {
+class SlackDecorator extends BaseDecorator implements ConfirmInterface {
 
     const SEND_TYPE = 'slack';
 
-    public function send($message)
+    public static function send($message)
     {
         // TODO: Implement send() method.
+
+        parent::save($message);
     }
 
 }
