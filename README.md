@@ -38,16 +38,12 @@ $newNotifer->send($message);
 ```
 Пример проверки подтверждения сообщения (пример реализации контролера в `Example`)
 ```php
- public function confirmNotify(Request $request) {
-
-        $requestConfirm = new Confirm();
-
-        if($requestConfirm->validation($request)) {
-            $requestConfirm->save($request);
-        } else {
-            // TODO: Implement fail confirm;
-        }
-
-    }
-
+$requestConfirm = new Confirm();
+if ($requestConfirm->validation($request)) {
+    $requestConfirm->confirm($request);
+    $targetModel = new Model('User');
+    $targetModel->update($requestConfirm, $request->data);
+} else {
+    // TODO: Implement fail confirm;
+} 
 ```
