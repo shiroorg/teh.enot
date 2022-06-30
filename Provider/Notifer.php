@@ -12,7 +12,8 @@ use EnotNotifer\Decorator\TelegramDecorator;
  * Class Notifer
  * @package EnotNotifer\Provider
  */
-class Notifer {
+class Notifer
+{
 
     /**
      * Список методов, которым нужно отправить сообщение
@@ -23,7 +24,8 @@ class Notifer {
     /**
      * @param $provider
      */
-    public function setProvider(...$provider) {
+    public function setProvider(...$provider)
+    {
         $this->provider = $provider;
     }
 
@@ -39,7 +41,7 @@ class Notifer {
                 case EmailDecorator::SEND_TYPE:
                     EmailDecorator::send($message);
                     break;
-                    /* ... */
+                /* ... */
                 case SlackDecorator::SEND_TYPE:
                     SlackDecorator::send($message);
                     break;

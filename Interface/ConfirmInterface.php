@@ -7,7 +7,8 @@ namespace EnotNotifer\Interface;
  * Interface SenderInterface
  * @package EnotNotifer\Interface
  */
-interface ConfirmInterface {
+interface ConfirmInterface
+{
 
     /**
      * Метод будет проверять что данные пришли валидные

@@ -3,16 +3,21 @@
 use EnotNotifer\Provider\Notifer;
 use EnotNotifer\Provider\Confirm;
 
-class ControllerConfirm {
+class ControllerConfirm
+{
 
-    public function sendNotify() {
+    /* Пример контролера который отправляет сообщение */
+    public function sendNotify()
+    {
+
+        /* ... */
 
         $message = array(
-            'email'     => 'example@mail.com',
-            'phone'     => '+79994442211',
-            'tag'       => 'sherlock77',
-            'url'       => 'http://slack.com/reciver',
-            'message'   => 'example@mail.com',
+            'email' => 'example@mail.com',
+            'phone' => '+79994442211',
+            'tag' => 'sherlock77',
+            'url' => 'http://slack.com/reciver',
+            'message' => 'example@mail.com',
         );
 
         $newNotifer = new Notifer();
@@ -23,18 +28,24 @@ class ControllerConfirm {
 
         $newNotifer->send($message);
 
+        /* ... */
     }
 
-    public function confirmNotify(Request $request) {
+    /* Пример контролера которые проверяет подтверждение действия */
+    public function confirmNotify(Request $request)
+    {
+
+        /* ... */
 
         $requestConfirm = new Confirm();
 
-        if($requestConfirm->validation($request)) {
-            $requestConfirm->save($request);
+        if ($requestConfirm->validation($request)) {
+            $requestConfirm->confirm($request);
         } else {
             // TODO: Implement fail confirm;
         }
 
+        /* ... */
     }
 
 }

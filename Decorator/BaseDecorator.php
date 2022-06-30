@@ -4,9 +4,11 @@ namespace EnotNotifer\Provider;
 
 use EnotNotifer\Interface\ConfirmInterface;
 
-class BaseDecorator implements ConfirmInterface {
+class BaseDecorator implements ConfirmInterface
+{
 
-    public static function save($message) {
+    public static function save($message)
+    {
         // TODO: Implement save data in DB method.
     }
 

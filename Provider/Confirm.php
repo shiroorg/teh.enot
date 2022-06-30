@@ -13,8 +13,8 @@ use EnotNotifer\Interface\ConfirmInterface;
  * Class Notifer
  * @package EnotNotifer\Provider
  */
-class Confirm implements ConfirmInterface {
-
+class Confirm implements ConfirmInterface
+{
 
     public function validation($request)
     {
