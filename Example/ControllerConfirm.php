@@ -1,5 +1,6 @@
 <?php
 
+use EnotNotifer\Provider\Model;
 use EnotNotifer\Provider\Notifer;
 use EnotNotifer\Provider\Confirm;
 
@@ -39,8 +40,16 @@ class ControllerConfirm
 
         $requestConfirm = new Confirm();
 
+        // Проверяем что данные валидные
         if ($requestConfirm->validation($request)) {
+
+            // Подтверждаем что проверка прошла
             $requestConfirm->confirm($request);
+
+            // Обновляем данные пользователя
+            $targetModel = new Model('User');
+            $targetModel->update($requestConfirm, $request->data);
+
         } else {
             // TODO: Implement fail confirm;
         }

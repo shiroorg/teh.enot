@@ -4,7 +4,7 @@ namespace EnotNotifer\Interface;
 
 /**
  * Указываем интерфейс который будет использоваться подтверждения
- * Interface SenderInterface
+ * Interface ConfirmInterface
  * @package EnotNotifer\Interface
  */
 interface ConfirmInterface

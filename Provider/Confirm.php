@@ -10,7 +10,7 @@ use EnotNotifer\Interface\ConfirmInterface;
 
 /**
  * Класс для отправки сообщений и конфигурации
- * Class Notifer
+ * Class Confirm
  * @package EnotNotifer\Provider
  */
 class Confirm implements ConfirmInterface

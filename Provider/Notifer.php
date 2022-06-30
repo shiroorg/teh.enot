@@ -6,13 +6,14 @@ use EnotNotifer\Decorator\EmailDecorator;
 use EnotNotifer\Decorator\SlackDecorator;
 use EnotNotifer\Decorator\SmsDecorator;
 use EnotNotifer\Decorator\TelegramDecorator;
+use EnotNotifer\Interface\NotiferInterface;
 
 /**
  * Класс для отправки сообщений и конфигурации
  * Class Notifer
  * @package EnotNotifer\Provider
  */
-class Notifer
+class Notifer implements NotiferInterface
 {
 
     /**
